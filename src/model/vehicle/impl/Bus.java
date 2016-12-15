@@ -2,35 +2,38 @@ package model.vehicle.impl;
 
 import model.vehicle.Vehicle;
 
-public class Car implements Vehicle{
+public class Bus implements Vehicle{
 
 	private String model;
 	private boolean isEngineRunning = false;
+	private double sizeOfCab;
 	
-	public Car(String model) {
+	public Bus(String model, double sizeOfCab) {
 		super();
 		this.model = model;
+		this.sizeOfCab = sizeOfCab;
 	}
+	
 	@Override
 	public void startEngine() {
-		System.out.println("Engine of car " + getModel() + " started.");
+		System.out.println("Engine of bus " + getModel() + " started.");
 		setEngineRunning(true);
 	}
 	@Override
 	public void moveRight() {
-		System.out.println("Car moved right.");
+		System.out.println("Bus moved right.");
 	}
 	@Override
 	public void moveLeft() {
-		System.out.println("Car moved left.");
+		System.out.println("Bus moved left.");
 	}
 	@Override
 	public void move() {
-		System.out.println("Car moved straight  ahead.");
+		System.out.println("Bus moved straight  ahead.");
 	}
 	@Override
 	public void stopEngine() {
-		System.out.println("Car stopped engine.");
+		System.out.println("Bus stopped engine.");
 		setEngineRunning(false);
 	}
 	public String getModel() {
@@ -45,8 +48,10 @@ public class Car implements Vehicle{
 	public void setEngineRunning(boolean isEngineRunning) {
 		this.isEngineRunning = isEngineRunning;
 	}
-	@Override
-	public String toString() {
-		return "Car [model=" + model + ", isEngineRunning=" + isEngineRunning + "]";
+	public double getSizeOfCab() {
+		return sizeOfCab;
+	}
+	public void setSizeOfCab(double sizeOfCab) {
+		this.sizeOfCab = sizeOfCab;
 	}
 }

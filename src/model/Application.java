@@ -6,6 +6,7 @@ import java.util.List;
 import model.human.Human;
 import model.human.Worker;
 import model.vehicle.Vehicle;
+import model.vehicle.impl.Bus;
 import model.vehicle.impl.Car;
 
 public class Application {
@@ -22,11 +23,14 @@ public class Application {
 		human.setAge(25);
 		System.out.println(human.toString());
 		
-		Vehicle car = new Car("Mercedes-Benz");
 		
-		car.startEngine();
-		car.move();
-		car.moveLeft();
-		car.stopEngine();
+		Vehicle [] vehicles = {new Bus("Volvo", 5.5), new Bus("Isuzu", 7.1), new Car("Mercedes-Benz"), new Bus("Icarus", 4.4)};
+		
+		for (Vehicle vehicle : vehicles) {
+			System.out.println();
+			vehicle.startEngine();
+			vehicle.moveLeft();
+			vehicle.stopEngine();
+		}
 	}
 }
