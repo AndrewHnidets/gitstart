@@ -7,4 +7,6 @@ public interface Vehicle {
 	public void moveLeft();
 	public void move();
 	public void stopEngine();
+	public void prognoseCurrent();
+	
 }

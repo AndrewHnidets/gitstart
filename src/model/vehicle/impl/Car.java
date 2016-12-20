@@ -6,10 +6,31 @@ public class Car implements Vehicle{
 
 	private String model;
 	private boolean isEngineRunning = false;
+	private double currentFuel;
+	private double maxFuel;
+	private double fuelForOneHundredKm;
 	
-	public Car(String model) {
+	
+	public Car(String model, double currentFuel, double maxFuel, double fuelForOneHundredKm) {
 		super();
 		this.model = model;
+		if((currentFuel > 0 && currentFuel < maxFuel) || (maxFuel < 100 && maxFuel > 0)){
+			this.currentFuel = currentFuel;
+			this.maxFuel = maxFuel;
+		}
+		else
+			System.out.println("Wrong data.");
+		if(fuelForOneHundredKm > 0 && fuelForOneHundredKm < 30){
+			this.fuelForOneHundredKm = fuelForOneHundredKm;
+		}
+		else
+			System.out.println("Wrong data.");
+	}
+	
+	@Override
+	public void prognoseCurrent() {
+		System.out.println("Car " + model + " can move with current fuel " + currentFuel + 
+				" for " + (int) (currentFuel/fuelForOneHundredKm) * 100 + " kms.");
 	}
 	@Override
 	public void startEngine() {
@@ -44,6 +65,25 @@ public class Car implements Vehicle{
 	}
 	public void setEngineRunning(boolean isEngineRunning) {
 		this.isEngineRunning = isEngineRunning;
+	}
+	public double getCurrentFuel() {
+		return currentFuel;
+	}
+	public void setCurrentFuel(double currentFuel) {
+		this.currentFuel = currentFuel;
+	}
+	public double getMaxFuel() {
+		return maxFuel;
+	}
+	public void setMaxFuel(double maxFuel) {
+		this.maxFuel = maxFuel;
+	}
+	
+	public double getFuelForOneHundredKm() {
+		return fuelForOneHundredKm;
+	}
+	public void setFuelForOneHundredKm(double fuelForOneHundredKm) {
+		this.fuelForOneHundredKm = fuelForOneHundredKm;
 	}
 	@Override
 	public String toString() {

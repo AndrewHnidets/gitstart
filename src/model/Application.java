@@ -23,14 +23,14 @@ public class Application {
 		human.setAge(25);
 		System.out.println(human.toString());
 		
-		
-		Vehicle [] vehicles = {new Bus("Volvo", 5.5), new Bus("Isuzu", 7.1), new Car("Mercedes-Benz"), new Bus("Icarus", 4.4)};
-		
+		Bus bus = new Bus("Isuzu", 7.1, 136.4, 190, 21.2);
+		Bus bus1 = new Bus("Volvo", 5.5, 150, 180, 18);
+		Vehicle [] vehicles = {bus1, bus, new Car("Mercedes-Benz", 20, 40, 9), new Bus("Icarus", 4.4, 20, 130, 17.3)};
+		System.out.println();
 		for (Vehicle vehicle : vehicles) {
-			System.out.println();
-			vehicle.startEngine();
-			vehicle.moveLeft();
-			vehicle.stopEngine();
+			vehicle.prognoseCurrent();
 		}
+		bus.prognoseMax();
+		bus1.prognoseMax();
 	}
 }
