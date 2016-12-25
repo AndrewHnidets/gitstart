@@ -29,10 +29,9 @@ public class Car implements Vehicle{
 	
 	@Override
 	public void prognoseCurrent() {
-		System.out.println("Car " + model + " can move with current fuel " + currentFuel + 
+		System.out.println("Car '" + model + "' can move with current fuel " + currentFuel + 
 				" for " + (int) (currentFuel/fuelForOneHundredKm) * 100 + " kms.");
 	}
-	@Override
 	public void startEngine() {
 		System.out.println("Engine of car " + getModel() + " started.");
 		setEngineRunning(true);
@@ -49,7 +48,6 @@ public class Car implements Vehicle{
 	public void move() {
 		System.out.println("Car moved straight  ahead.");
 	}
-	@Override
 	public void stopEngine() {
 		System.out.println("Car stopped engine.");
 		setEngineRunning(false);
